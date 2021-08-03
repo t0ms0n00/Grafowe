@@ -1,0 +1,234 @@
+==37== Memcheck, a memory error detector
+==37== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==37== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==37== Command: ./executable
+==37== Parent PID: 8
+==37== 
+--37-- 
+--37-- Valgrind options:
+--37--    --leak-check=full
+--37--    --show-leak-kinds=all
+--37--    --track-origins=yes
+--37--    --verbose
+--37--    --log-file=valgrind-out.txt
+--37-- Contents of /proc/version:
+--37--   Linux version 4.4.0-19041-Microsoft (Microsoft@Microsoft.com) (gcc version 5.4.0 (GCC) ) #488-Microsoft Mon Sep 01 13:43:00 PST 2020
+--37-- 
+--37-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--37-- Page sizes: currently 4096, max supported 4096
+--37-- Valgrind library directory: /usr/lib/valgrind
+--37-- Reading syms from /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable
+--37-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--37--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--37--   .. CRC mismatch (computed 6c71a321 wanted b59d24a6)
+--37--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--37--   .. CRC is valid
+--37-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--37--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--37--   .. CRC mismatch (computed 41ddb025 wanted 9972f546)
+--37--    object doesn't have a symbol table
+--37--    object doesn't have a dynamic symbol table
+--37-- Scheduler: using generic scheduler lock implementation.
+--37-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==37== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-37-by-tomek-on-???
+==37== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-37-by-tomek-on-???
+==37== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-37-by-tomek-on-???
+==37== 
+==37== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==37== don't want to do, unless you know exactly what you're doing,
+==37== or are doing some strange experiment):
+==37==   /usr/lib/valgrind/../../bin/vgdb --pid=37 ...command...
+==37== 
+==37== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==37==   /path/to/gdb ./executable
+==37== and then give GDB the following command
+==37==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=37
+==37== --pid is optional if only one valgrind process is running
+==37== 
+==37== error calling PR_SET_PTRACER, vgdb might block
+--37-- REDIR: 0x4020d40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580608c1 (???)
+--37-- REDIR: 0x4020b20 (ld-linux-x86-64.so.2:index) redirected to 0x580608db (???)
+--37-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--37--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--37--   .. CRC mismatch (computed 50df1b30 wanted 4800a4cf)
+--37--    object doesn't have a symbol table
+--37-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--37--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--37--   .. CRC mismatch (computed f893b962 wanted 95ee359e)
+--37--    object doesn't have a symbol table
+==37== WARNING: new redirection conflicts with existing -- ignoring it
+--37--     old: 0x04020d40 (strlen              ) R-> (0000.0) 0x580608c1 ???
+--37--     new: 0x04020d40 (strlen              ) R-> (2007.0) 0x04c34db0 strlen
+--37-- REDIR: 0x401d560 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c35ee0 (strcmp)
+--37-- REDIR: 0x4021280 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c394f0 (mempcpy)
+--37-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--37--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--37--   .. CRC mismatch (computed eabd4889 wanted a033e032)
+--37--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--37--   .. CRC is valid
+--37-- REDIR: 0x4edcb70 (libc.so.6:memmove) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edbe80 (libc.so.6:strncpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edce50 (libc.so.6:strcasecmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edb8d0 (libc.so.6:strcat) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edbeb0 (libc.so.6:rindex) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4ede5a0 (libc.so.6:rawmemchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edcce0 (libc.so.6:mempcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edcb10 (libc.so.6:bcmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edbe40 (libc.so.6:strncmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edb940 (libc.so.6:strcmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edcc40 (libc.so.6:memset) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4ef9ed0 (libc.so.6:wcschr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edbde0 (libc.so.6:strnlen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edb9b0 (libc.so.6:strcspn) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edcea0 (libc.so.6:strncasecmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edb980 (libc.so.6:strcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edcfe0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edbee0 (libc.so.6:strpbrk) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edb900 (libc.so.6:index) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edbdb0 (libc.so.6:strlen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4ee64a0 (libc.so.6:memrchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edcef0 (libc.so.6:strcasecmp_l) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edcae0 (libc.so.6:memchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4efac90 (libc.so.6:wcslen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edc190 (libc.so.6:strspn) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edce20 (libc.so.6:stpncpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edcdf0 (libc.so.6:stpcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4ede5d0 (libc.so.6:strchrnul) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4edcf40 (libc.so.6:strncasecmp_l) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--37-- REDIR: 0x4fcc300 (libc.so.6:__strrchr_avx2) redirected to 0x4c34730 (rindex)
+--37-- REDIR: 0x4ed5140 (libc.so.6:malloc) redirected to 0x4c31aa0 (malloc)
+--37-- REDIR: 0x4ed5a30 (libc.so.6:free) redirected to 0x4c32cd0 (free)
+--37-- REDIR: 0x4ed6d70 (libc.so.6:realloc) redirected to 0x4c33cb0 (realloc)
+==37== Invalid read of size 8
+==37==    at 0x109FBF: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Address 0x5235390 is 16 bytes inside a block of size 24 free'd
+==37==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x1089CF: removeEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109FBA: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Block was alloc'd at
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x108858: addEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109A19: isNegativeCycle (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109B4A: minCostMaxFlow (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109E9E: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+==37== Invalid read of size 8
+==37==    at 0x109EF8: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Address 0x5241840 is 16 bytes inside a block of size 24 free'd
+==37==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x1089CF: removeEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109EF3: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Block was alloc'd at
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x108858: addEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109A19: isNegativeCycle (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109B4A: minCostMaxFlow (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109E9E: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+--37-- REDIR: 0x4fcc4d0 (libc.so.6:__strlen_avx2) redirected to 0x4c34cf0 (strlen)
+==37== Invalid read of size 8
+==37==    at 0x10A395: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Address 0x5255c40 is 16 bytes inside a block of size 24 free'd
+==37==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x1089CF: removeEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A390: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Block was alloc'd at
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x108858: addEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109C32: minCostMaxFlow (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109E9E: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+--37-- REDIR: 0x4fcc9f0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c39130 (mempcpy)
+==37== 
+==37== HEAP SUMMARY:
+==37==     in use at exit: 59,520 bytes in 2,004 blocks
+==37==   total heap usage: 15,020 allocs, 13,016 frees, 362,064 bytes allocated
+==37== 
+==37== Searching for pointers to 2,004 not-freed blocks
+==37== Checked 70,056 bytes
+==37== 
+==37== 320 bytes in 4 blocks are definitely lost in loss record 1 of 4
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x10A079: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+==37== 960 bytes in 40 blocks are definitely lost in loss record 2 of 4
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x10A0A5: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+==37== 14,560 bytes in 140 blocks are definitely lost in loss record 3 of 4
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x109CCB: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+==37== 43,680 bytes in 1,820 blocks are definitely lost in loss record 4 of 4
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x109CF7: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+==37== LEAK SUMMARY:
+==37==    definitely lost: 59,520 bytes in 2,004 blocks
+==37==    indirectly lost: 0 bytes in 0 blocks
+==37==      possibly lost: 0 bytes in 0 blocks
+==37==    still reachable: 0 bytes in 0 blocks
+==37==         suppressed: 0 bytes in 0 blocks
+==37== 
+==37== ERROR SUMMARY: 8492 errors from 7 contexts (suppressed: 0 from 0)
+==37== 
+==37== 168 errors in context 1 of 7:
+==37== Invalid read of size 8
+==37==    at 0x10A395: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Address 0x5255c40 is 16 bytes inside a block of size 24 free'd
+==37==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x1089CF: removeEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A390: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Block was alloc'd at
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x108858: addEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109C32: minCostMaxFlow (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109E9E: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+==37== 
+==37== 698 errors in context 2 of 7:
+==37== Invalid read of size 8
+==37==    at 0x109EF8: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Address 0x5241840 is 16 bytes inside a block of size 24 free'd
+==37==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x1089CF: removeEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109EF3: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Block was alloc'd at
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x108858: addEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109A19: isNegativeCycle (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109B4A: minCostMaxFlow (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109E9E: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+==37== 
+==37== 7622 errors in context 3 of 7:
+==37== Invalid read of size 8
+==37==    at 0x109FBF: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Address 0x5235390 is 16 bytes inside a block of size 24 free'd
+==37==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x1089CF: removeEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109FBA: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==  Block was alloc'd at
+==37==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==37==    by 0x108858: addEdge (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109A19: isNegativeCycle (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109B4A: minCostMaxFlow (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x109E9E: isPossible (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37==    by 0x10A2DA: main (in /mnt/c/Users/Tomek/Desktop/studia/AlgoGrafPr1/executable)
+==37== 
+==37== ERROR SUMMARY: 8492 errors from 7 contexts (suppressed: 0 from 0)
